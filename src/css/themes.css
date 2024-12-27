@@ -1,0 +1,166 @@
+.theme-default {
+    --primary: #3498db;
+    --secondary: #2ecc71;
+    --accent: #e74c3c;
+    --background: #ecf0f1;
+    --surface: #ffffff;
+    --text: #2c3e50;
+    --cell-bg: #bdc3c7;
+    --cell-revealed: #fff;
+    --leaderboard-bg: #f5f6fa;
+    --border: #95a5a6;
+}
+
+.theme-dark {
+    --primary: #6c5ce7;
+    --secondary: #a55eea;
+    --accent: #ff7675;
+    --background: #2f3640;
+    --surface: #353b48;
+    --text: #f5f6fa;
+    --cell-bg: #485460;
+    --cell-revealed: #636e72;
+    --leaderboard-bg: #353b48;
+    --border: #dcdde1;
+}
+
+.theme-nature {
+    --primary: #27ae60;
+    --secondary: #2ecc71;
+    --accent: #f1c40f;
+    --background: #f0f9f0;
+    --surface: #ffffff;
+    --text: #2c3e50;
+    --cell-bg: #a8e6cf;
+    --cell-revealed: #e8fdf5;
+    --leaderboard-bg: #e8fdf5;
+    --border: #27ae60;
+}
+
+.theme-ocean {
+    --primary: #0097e6;
+    --secondary: #00a8ff;
+    --accent: #ffa502;
+    --background: #f1f8ff;
+    --surface: #ffffff;
+    --text: #2f3542;
+    --cell-bg: #c7ecee;
+    --cell-revealed: #e8f6ff;
+    --leaderboard-bg: #e8f6ff;
+    --border: #0097e6;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+}
+
+.container {
+    background-color: var(--surface);
+}
+
+.game-title {
+    color: var(--primary);
+}
+
+.theme-btn {
+    border-color: var(--border);
+}
+
+.theme-btn.active {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px var(--primary);
+}
+
+.theme-btn.default { background: linear-gradient(135deg, #3498db, #2ecc71); }
+.theme-btn.dark { background: linear-gradient(135deg, #6c5ce7, #a55eea); }
+.theme-btn.nature { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+.theme-btn.ocean { background: linear-gradient(135deg, #0097e6, #00a8ff); }
+
+#grid {
+    background-color: var(--border);
+}
+
+.cell {
+    background-color: var(--cell-bg);
+    border-color: var(--border);
+}
+
+.revealed {
+    background-color: var(--cell-revealed);
+}
+
+.mine {
+    background-color: var(--accent);
+}
+
+.game-info {
+    background-color: var(--leaderboard-bg);
+}
+
+.info-item {
+    color: var(--primary);
+}
+
+.leaderboard-section {
+    background-color: var(--leaderboard-bg);
+}
+
+.leaderboard-title {
+    color: var(--primary);
+}
+
+.leaderboard-item {
+    background-color: var(--surface);
+}
+
+.leaderboard-rank {
+    color: var(--primary);
+}
+
+.leaderboard-score {
+    color: var(--secondary);
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+}
+
+button:hover {
+    background-color: var(--secondary);
+}
+
+select, input {
+    background-color: var(--surface);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+select:focus, input:focus {
+    border-color: var(--primary);
+}
+
+.auth-container {
+    background-color: var(--surface);
+}
+
+.auth-container h2 {
+    color: var(--primary);
+}
+
+.auth-input {
+    background-color: var(--surface);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.auth-switch a {
+    color: var(--primary);
+}
+
+.notification {
+    background-color: var(--surface);
+    color: var(--text);
+}
+

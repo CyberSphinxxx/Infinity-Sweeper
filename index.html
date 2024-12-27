@@ -3,9 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Infinity Sweeper</title>
+    <link rel="stylesheet" href="/src/css/main.css">
+    <link rel="stylesheet" href="/src/css/themes.css">
 </head>
-<body>
-    
+<body class="theme-default">
+    <div id="login-register">
+        <div class="auth-container">
+            <h2>Welcome to Infinity Sweeper</h2>
+            <div id="login-form" class="auth-form">
+                <h3>Login</h3>
+                <input type="text" id="login-username" placeholder="Username" class="auth-input">
+                <input type="password" id="login-password" placeholder="Password" class="auth-input">
+                <button onclick="login()">Login</button>
+                <button onclick="playWithoutAccount()">Play without account</button>
+                <div class="auth-switch">
+                    <p>Don't have an account? <a href="#" onclick="toggleAuthForm()">Register</a></p>
+                </div>
+            </div>
+            <div id="register-form" class="auth-form" style="display: none;">
+                <h3>Register</h3>
+                <input type="text" id="register-username" placeholder="Username" class="auth-input">
+                <input type="password" id="register-password" placeholder="Password" class="auth-input">
+                <button onclick="register()">Register</button>
+                <div class="auth-switch">
+                    <p>Already have an account? <a href="#" onclick="toggleAuthForm()">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="toggle-leaderboard" onclick="toggleLeaderboard()">Show Leaderboard</button>
+
+    <div class="container">
+        <div class="game-section">
+            <div class="game-header">
+                <h1 class="game-title">Infinity Sweeper</h1>
+                <div id="user-info">
+                    <span id="username-display"></span>
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </div>
+
+            <div class="theme-selector">
+                <button class="theme-btn default active" onclick="setTheme('default')" title="Default Theme">🌞</button>
+                <button class="theme-btn dark" onclick="setTheme('dark')" title="Dark Theme">🌙</button>
+                <button class="theme-btn nature" onclick="setTheme('nature')" title="Nature Theme">🌿</button>
+                <button class="theme-btn ocean" onclick="setTheme('ocean')" title="Ocean Theme">🌊</button>
+            </div>
+
+            <div class="control-group">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty" onchange="setDifficulty()">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+
+            <div class="controls-container">
+                <button onclick="setGridSize(8)">8x8</button>
+                <button onclick="setGridSize(16)">16x16</button>
+                <button onclick="setGridSize(24)">24x24</button>
+                <div class="control-group">
+                    <input type="number" id="custom-size" placeholder="Custom size" min="4" max="50">
+                    <button onclick="setCustomGridSize()">Set Custom Size</button>
+                </div>
+            </div>
+
+            <div class="game-info">
+                <div class="info-item" id="score">Score: 0</div>
+                <div class="info-item" id="mines-left">Mines: 0</div>
+            </div>
+
+            <div id="grid"></div>
+        </div>
+
+        <div class="leaderboard-section">
+            <div class="leaderboard-header">
+                <h2 class="leaderboard-title">Leaderboard</h2>
+            </div>
+            <div id="leaderboard-content">
+                <select id="leaderboard-sort" onchange="updateLeaderboard()">
+                    <option value="highScore">Highest Score</option>
+                    <option value="avgScore">Average Score</option>
+                    <option value="gamesPlayed">Games Played</option>
+                </select>
+                <div id="leaderboard-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="/src/js/auth.js"></script>
+    <script src="/src/js/game.js"></script>
+    <script src="/src/js/ui.js"></script>
 </body>
 </html>
+
